@@ -3,11 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
     <typeAliases>
         <package name="ecnu.dase.psf.entity"/>
     </typeAliases>
-    <mappers>
-        <!--<mapper resource="cn/happy/entity/IUserInfoDAO.xml" /> -->
+<!--    <mappers>
+        &lt;!&ndash;<mapper resource="cn/happy/entity/IUserInfoDAO.xml" /> &ndash;&gt;
         <package name="ecnu.dase.psf.dao"/>
-    </mappers>
+    </mappers>-->
 </configuration>
