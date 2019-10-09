@@ -1,8 +1,9 @@
 package ecnu.dase.psf.service.impl;
 
-import ecnu.dase.psf.dao.IUserDao;
+import ecnu.dase.psf.dao.UserDao;
 import ecnu.dase.psf.entity.User;
 import ecnu.dase.psf.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +14,10 @@ import java.util.Map;
  * @version 1.0
  * @date 2019/10/8 16:46
  */
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
-    private IUserDao userDao;
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public User login(User user) {

@@ -10,7 +10,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>ssm-demo系统登录</title>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <style type=text/css>
         body {
             text-align: center;
@@ -74,6 +74,7 @@
                 alert("密码不能为空！");
                 return;
             }
+
             $("#adminlogin").submit();
 
         }

@@ -10,7 +10,7 @@ import java.util.Map;
  * @version 1.0
  * @date 2019/10/8 16:44
  */
-public interface IUserDao {
+public interface UserDao {
     /**
      * user login
      * @return

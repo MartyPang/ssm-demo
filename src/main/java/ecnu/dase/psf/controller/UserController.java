@@ -7,6 +7,7 @@ import org.apache.log4j.MDC;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -20,11 +21,16 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+    @Resource
     private UserService userService;
+
     private static final Logger log = Logger.getLogger(UserController.class);
 
     @RequestMapping("/login")
     public String login(User user, HttpServletRequest request) {
+        if(userService == null) {
+            log.info("null userService!");
+        }
         User resultUser = userService.login(user);
         log.info("request: user/login , user: " + user.toString());
         if (resultUser == null) {

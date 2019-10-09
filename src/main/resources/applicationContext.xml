@@ -87,7 +87,7 @@
 
     <!-- aop配置 -->
     <aop:config>
-        <aop:pointcut expression="execution(* *..service.*.*(..))" id="stockPointcut"/>
+        <aop:pointcut expression="execution(* ecnu.dase.psf.service.*.*(..))" id="stockPointcut"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="stockPointcut"/>
     </aop:config>
 
