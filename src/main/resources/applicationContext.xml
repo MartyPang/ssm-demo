@@ -39,7 +39,7 @@
     <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis-config.xml"></property>
         <!-- 自动扫描mappers.xml文件 -->
-        <property name="mapperLocations" value="classpath:/ecnu/dase/psf/mappers/*.xml"></property>
+        <property name="mapperLocations" value="classpath*:mappers/*.xml"></property>
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
@@ -86,9 +86,11 @@
     </tx:advice>
 
     <!-- aop配置 -->
+<!--
     <aop:config>
         <aop:pointcut expression="execution(* ecnu.dase.psf.service.*.*(..))" id="stockPointcut"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="stockPointcut"/>
     </aop:config>
+-->
 
 </beans>

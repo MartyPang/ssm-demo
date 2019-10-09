@@ -4,8 +4,10 @@ import ecnu.dase.psf.entity.User;
 import ecnu.dase.psf.service.UserService;
 import org.apache.log4j.Logger;
 import org.apache.log4j.MDC;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +23,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    @Resource
+    @Autowired
     private UserService userService;
 
     private static final Logger log = Logger.getLogger(UserController.class);

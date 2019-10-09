@@ -8,6 +8,11 @@
 
     <!-- 使用注解的包，包括子集 -->
 <!--    <context:component-scan base-package="ecnu.dase.psf.controller"/>-->
+
+    <context:component-scan base-package="ecnu.dase.psf.controller">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
     <mvc:annotation-driven/>
 
     <!-- 视图解析器 -->

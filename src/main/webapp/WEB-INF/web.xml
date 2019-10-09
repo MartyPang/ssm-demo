@@ -11,9 +11,24 @@
         <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
 
+    <!-- 日志记录 -->
+    <context-param>
+        <!-- 日志配置文件路径 -->
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
+    </context-param>
+    <context-param>
+        <param-name>log4jRefreshInterval</param-name>
+        <param-value>60000</param-value>
+    </context-param>
+
     <!-- 注册ServletContext监听器，创建容器对象，并且将ApplicationContext对象放到Application域中 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!--防止spring内存溢出监听器-->
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
 
     <!-- 针对SpringMVC的配置，中央调度器：本质上一个serlvet 配置的关于SpringmVC组件 -->
